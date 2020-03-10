@@ -15,5 +15,5 @@ Route::post('produtos', 'ProdutoController@save')->name('produtos.save');*/
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('template.template');
 });
