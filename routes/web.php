@@ -4,6 +4,7 @@ use App\Http\Controllers\ProdutoController;
 use Illuminate\Support\Facades\Route;
 
 Route::resource('produtos', 'ProdutoController');
+Route::resource('categorias', 'CategoriaController');
 /*Route::delete('produtos/{id}', 'ProdutoController@destroy')->name('produtos.destroy');
 Route::put('produtos/{id}', 'ProdutoController@update')->name('produtos.update');
 Route::get('produtos/create', 'ProdutoController@create')->name('produtos.create');
