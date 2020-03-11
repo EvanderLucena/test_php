@@ -29,7 +29,7 @@
 					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDrop">Cadastro</a>
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="{{ route('produtos.index')}}">Produtos</a>
-						<a class="dropdown-item" href="{{ route('categorias.create')}}">Categorias</a>
+						<a class="dropdown-item" href="{{ route('categorias.index')}}">Categorias</a>
 					</div>
 				</li>
 			</ul>

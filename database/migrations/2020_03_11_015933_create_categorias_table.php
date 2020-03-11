@@ -19,6 +19,16 @@ class CreateCategoriasTable extends Migration
             $table->string('nome')->unique();
             $table->timestamps();
         });
+        INSERT INTO categorias (nome)
+            VALUES ('Marlon');
+        INSERT INTO categorias (nome)
+            VALUES ('Carlos');
+        INSERT INTO categorias (nome)
+            VALUES ('Josue');
+        INSERT INTO categorias (nome)
+            VALUES ('Jose');
+        INSERT INTO categorias (nome)
+            VALUES ('Carla');
     }
 
     /**
