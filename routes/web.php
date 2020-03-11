@@ -13,7 +13,6 @@ Route::get('produtos/{id}', 'ProdutoController@show')->name('produtos.show');
 Route::get('produtos', 'ProdutoController@index')->name('produtos.index');
 Route::post('produtos', 'ProdutoController@save')->name('produtos.save');*/
 
-
 Route::get('/', function () {
-    return view('template.template');
+    return view('welcome');
 });

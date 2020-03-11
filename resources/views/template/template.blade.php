@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>GerOS</title>
+	<title>Energia Renovavel</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
@@ -17,7 +17,7 @@
 
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">GerOS</a>
+		<a class="navbar-brand" href="/">Home</a>
 		<button class="navbar navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarPrincipal">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -26,27 +26,20 @@
 
 			<ul class="navbar-nav">
 				<li class="nav-item dropdown">
-					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDrop">Cadastros</a>
+					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDrop">Cadastro</a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="/clientes/lista_clientes">Clientes</a>
-						<a class="dropdown-item" href="/fornecedores/lista_fornecedor">Fornecedores</a>
-						<a class="dropdown-item" href="/funcionarios/lista_funcionario">Funcionários</a>
-						<a class="dropdown-item" href="/produtos/lista_produto">Peças</a>
-						<a class="dropdown-item" href="/servicos/lista_servico">Serviços</a>
-						<a class="dropdown-item" href="/veiculos/lista_veiculo">Veículos</a>
+						<a class="dropdown-item" href="{{ route('produtos.index')}}">Produtos</a>
+						<a class="dropdown-item" href="{{ route('categorias.create')}}">Categorias</a>
 					</div>
 				</li>
 			</ul>
 			<ul class="navbar-nav">
 				<li class="nav-item dropdown">
-					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDrop">Ordens de Serviço</a>
+					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDrop">Saiba mais</a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">Aguardando Orçamento</a>
-						<a class="dropdown-item" href="#">Orçementos Prontos</a>
-						<a class="dropdown-item" href="#">OS's Aprovadas</a>
-						<a class="dropdown-item" href="#">OS's em Andamento</a>
-						<a class="dropdown-item" href="#">OS's Concluídas</a>
-						<a class="dropdown-item" href="#">OS's Finalizadas</a>
+						<a class="dropdown-item" href="#">Sobre nós</a>
+						<a class="dropdown-item" href="#">Informações</a>
+						<a class="dropdown-item" href="#">Desenvolvedor</a>
 					</div>
 				</li>
 			</ul>
