@@ -2,7 +2,7 @@
 @section('conteudo')
 <div class="p-3 mb-2 bg-info text-white">
     <div class="container p-3 mb-2 bg-light text-dark">
-
+      <h1 class="text-center">Categorias</h1>
         <!--Table-->
         <table class=" table table-hover table-sm table-bordered">
         
@@ -29,8 +29,8 @@
           </tbody>
           <tfoot>
             <tr style="text-align:center">
-              <td><a href="#" class="btn btn-sm btn-success col-sm-5">Salvar</a></td>
-              <td><a href="#" class="btn btn-sm btn-primary col-sm-5">Voltar</a></td>
+            <td><a href="{{ route('categorias.create')}}" class="btn btn-sm btn-success col-sm-5">Inserir</a></td>
+              <td><a href="{{ route('inicial')}}" class="btn btn-sm btn-primary col-sm-5">Voltar</a></td>
             </tr> 
               {!! $categorias->links()!!}  
           </tfoot>

@@ -15,4 +15,4 @@ Route::post('produtos', 'ProdutoController@save')->name('produtos.save');*/
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('inicial');

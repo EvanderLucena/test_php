@@ -16,19 +16,9 @@ class CreateCategoriasTable extends Migration
         Schema::create('categorias', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('nome')->unique();
+            $table->string('nome');
             $table->timestamps();
         });
-        INSERT INTO categorias (nome)
-            VALUES ('Marlon');
-        INSERT INTO categorias (nome)
-            VALUES ('Carlos');
-        INSERT INTO categorias (nome)
-            VALUES ('Josue');
-        INSERT INTO categorias (nome)
-            VALUES ('Jose');
-        INSERT INTO categorias (nome)
-            VALUES ('Carla');
     }
 
     /**
