@@ -22,7 +22,23 @@
               <tr>
               <td>{{ $categoria->id}}</td>
               <td>{{ $categoria->nome}}</td>
-              <td style="text-align:center"><a href="#" class="btn btn-sm btn-primary col-sm-2">Editar</a> <a href="#" class="btn btn-sm btn-danger col-sm-2">Remover</a></td>
+              <td style="text-align:center" >
+                <div class="btn-group btn-sm">
+                    <form action="{{ route('categorias.edit', $categoria->id) }}" method="post">
+                      @csrf
+                      @method('GET')
+                     <button type="submit" class="btn btn-primary btn-sm">Editar</button>
+                    </form>
+                </div>
+
+                <div class="btn-group btn-sm">
+                    <form action="{{ route('categorias.destroy', $categoria->id) }}" method="post">
+                      @csrf
+                      @method('DELETE')       
+                      <button type="submit" class="btn btn-danger btn-sm" >Remover</button>
+                    </form>
+                </div>    
+              </td>
 
               </tr>
               @endforeach

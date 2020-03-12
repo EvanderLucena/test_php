@@ -64,19 +64,28 @@ class CategoriaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categoria = Categoria::find($id);
+        if (!$categoria) {
+            return redirect()->back();
+        }
+        return view('pages.categorias.edit', compact('categoria'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreUpdateCategoriaRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreUpdateCategoriaRequest $request, $id)
     {
-        //
+        $categoria = Categoria::find($id);
+        if (!$categoria) {
+            return redirect()->back();
+        }
+        $categoria->update($request->all());
+        return redirect()->route('categorias.index');
     }
 
     /**
@@ -87,6 +96,11 @@ class CategoriaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categoria = Categoria::find($id);
+        if (!$categoria) {
+            return redirect()->back();
+        }
+        $categoria->delete();
+        return redirect()->route('categorias.index');
     }
 }

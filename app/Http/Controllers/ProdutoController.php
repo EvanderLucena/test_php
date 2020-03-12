@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Categoria;
 use App\Produto;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreUpdateProdutoRequest;
 
 class ProdutoController extends Controller
 {
@@ -14,10 +16,12 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        $produtos = Produto::all();
+        $produtos = Produto::paginate(3);
+        $categorias = Categoria::all();
 
         return view('pages.produtos.index', [
             'produtos' => $produtos,
+            'categorias'=> $categorias,
         ]);
     }
 
@@ -34,12 +38,16 @@ class ProdutoController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreUpdateProdutoRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUpdateProdutoRequest $request)
     {
-        //
+        
+        $data = $request->only('nome');
+        Produto::create($data);
+        return redirect()->route('produtos.index');
+  
     }
 
     /**
@@ -61,19 +69,28 @@ class ProdutoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $produto = Produto::find($id);
+        if (!$produto) {
+            return redirect()->back();
+        }
+        return view('pages.produtos.edit', compact('produto'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreUpdateProdutoRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreUpdateProdutoRequest $request, $id)
     {
-        //
+        $produto = Produto::find($id);
+        if (!$produto) {
+            return redirect()->back();
+        }
+        $produto->update($request->all());
+        return redirect()->route('produtos.index');
     }
 
     /**
@@ -84,6 +101,12 @@ class ProdutoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $produto = Produto::find($id);
+        if (!$produto) {
+            return redirect()->back();
+        }
+        $produto->delete();
+        return redirect()->route('produtos.index');
+   
     }
 }
