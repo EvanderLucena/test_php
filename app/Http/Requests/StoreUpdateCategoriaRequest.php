@@ -24,7 +24,7 @@ class StoreUpdateCategoriaRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome' => 'required|min:3|max:255',
+            'nome' => 'required|min:3|max:255|unique:categorias,nome',
         ];
     }
 
@@ -33,6 +33,7 @@ class StoreUpdateCategoriaRequest extends FormRequest
         return [
             'nome.required' => 'Nome é obrigatório!',
             'nome.min' => 'Ops! Minimo de 3 caracteres!',
+            'nome.unique' => 'Essa categoria já existe!',
         ];
     }
 }

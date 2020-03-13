@@ -27,7 +27,7 @@
               <td>{{ $produto->nome}}</td>
               <td>{{ $produto->descricao}}</td>
               <td>{{ $produto->preco}}</td>
-              <td>{{ $categorias->nome}}</td>
+              <td>{{ $produto->categoria->nome}}</td>
               <td style="text-align:center" >
                 <div class="btn-group btn-sm">
                     <form action="{{ route('produtos.edit', $produto->id) }}" method="post">

@@ -17,11 +17,8 @@ class ProdutoController extends Controller
     public function index()
     {
         $produtos = Produto::paginate(3);
-        $categorias = Categoria::all();
-
         return view('pages.produtos.index', [
             'produtos' => $produtos,
-            'categorias'=> $categorias,
         ]);
     }
 
@@ -31,8 +28,11 @@ class ProdutoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('pages.produtos.create');
+    {   
+        $categorias = Categoria::all();
+        return view('pages.produtos.create', [
+            'categorias' => $categorias,
+        ]);
     }
 
     /**
@@ -44,7 +44,7 @@ class ProdutoController extends Controller
     public function store(StoreUpdateProdutoRequest $request)
     {
         
-        $data = $request->only('nome');
+        $data = $request->only('nome','preco','idcat','descricao');
         Produto::create($data);
         return redirect()->route('produtos.index');
   

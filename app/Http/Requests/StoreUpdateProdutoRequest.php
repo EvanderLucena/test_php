@@ -25,7 +25,6 @@ class StoreUpdateProdutoRequest extends FormRequest
     {
         return [
             'nome' => 'required|min:3|max:255',
-            'descricao' => 'min:2|max:255',
             'preco' => 'required',
             'idcat' => 'required',
         ];
