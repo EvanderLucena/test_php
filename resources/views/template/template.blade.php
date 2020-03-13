@@ -53,7 +53,7 @@
 		</div>
 	</div>
 	<nav class="navbar navbar-light fixed-bottom bg-light">
-		<a href="#" title="">GerOS</a>
+		<a href="{{ route('inicial')}}" title="">Energia Renovavel</a>
 	</nav>
 </body>
 </html>
