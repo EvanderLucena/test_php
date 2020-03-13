@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Categoria;
 use App\Http\Requests\StoreUpdateCategoriaRequest;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
+
+
 
 class CategoriaController extends Controller
 {
@@ -19,6 +22,7 @@ class CategoriaController extends Controller
 
         return view('pages.categorias.index', [
             'categorias' => $categorias,
+            'erros' => null,
         ]);
     }
 
@@ -96,11 +100,15 @@ class CategoriaController extends Controller
      */
     public function destroy($id)
     {
+
         $categoria = Categoria::find($id);
         if (!$categoria) {
             return redirect()->back();
         }
         $categoria->delete();
         return redirect()->route('categorias.index');
+   
+        
+
     }
 }

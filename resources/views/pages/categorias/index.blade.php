@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="btn-group btn-sm">
-                    <form action="{{ route('categorias.destroy', $categoria->id) }}" method="post">
+                    <form action="{{ route('categorias.destroy', $categoria->id) }}" onsubmit="return confirm('Deseja deletar a categoria e todos seus respectivos produtos?');" method="post">
                       @csrf
                       @method('DELETE')       
                       <button type="submit" class="btn btn-danger btn-sm" >Remover</button>
@@ -51,11 +51,10 @@
               {!! $categorias->links()!!}  
           </tfoot>
           <!--Table body-->
-      
+    
         </table>
-      
         <!--Table-->
-      
-      </div>
+       
+    </div>
 </div>
 @stop

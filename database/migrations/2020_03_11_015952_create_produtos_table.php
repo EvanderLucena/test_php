@@ -20,7 +20,7 @@ class CreateProdutosTable extends Migration
             $table->string('descricao');
             $table->double('preco', 10, 2);
             $table->integer('idcat')->unsigned();
-            $table->foreign('idcat')->references('id')->on('categorias');
+            $table->foreign('idcat')->references('id')->on('categorias')->onDelete('cascade');
             $table->timestamps();
            
         });

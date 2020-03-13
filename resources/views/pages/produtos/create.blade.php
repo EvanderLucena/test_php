@@ -12,19 +12,19 @@
 				    <strong><label for  = "nome">Nome</label></strong><br/>
 				    <input  type = "text" class = "form-control" name = "nome" id = "nome" placeholder = "Nome do Produto" value = "{{ old('nome')}}"><br/>
                     <strong><label for  = "preco">Preço</label></strong><br/>
-                    <input type = "text" class = "form-control col-md-3" onkeypress = "$(this).mask('999.990.00')"name = "preco" id = "preco" placeholder = "R$ 0,00" value = "{{ old('preco')}}"><br/>
+					<input type = "text" class = "form-control col-md-3" onkeypress = "$(this).mask('999.999.999.99', {reverse: true})"name = "preco" id = "preco" placeholder = "R$ 0.00" value = "{{ old('preco')}}"><br/>
+					
                
                     <strong><label for  = "preco">Categoria</label></strong><br/>
                     <select class = "form-control col-md-3" name="idcat" id="idcat">
-                            @foreach($categorias as $categoria)
-                            <option>{{$categoria->nome}}</option> 
+                            @foreach($categorias as $key => $value)
+					<option value="{{$value->id}}"> {{$value->nome}} </option> 
                         
-                               
                             @endforeach
                     </select>
                 
                     <strong><label for  = "descricao">Descrição</label></strong><br />
-                    <textarea name = "descricao" class = "form-control" id = "descricao" placeholder = "Descrição" value = "{{ old('descricao')}}"></textarea><br />
+                    <textarea name = "descricao" class = "form-control" id = "descricao" placeholder = "Descrição">{{ old('descricao')}}</textarea><br />
 				
 				@if ($errors->any)
 					<ul>

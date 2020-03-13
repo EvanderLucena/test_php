@@ -16,7 +16,7 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        $produtos = Produto::paginate(3);
+        $produtos = Produto::paginate(1);
         return view('pages.produtos.index', [
             'produtos' => $produtos,
         ]);
@@ -68,12 +68,13 @@ class ProdutoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {   
+        $categorias = Categoria::all();
         $produto = Produto::find($id);
         if (!$produto) {
             return redirect()->back();
         }
-        return view('pages.produtos.edit', compact('produto'));
+        return view('pages.produtos.edit', compact('produto','categorias'));
     }
 
     /**
