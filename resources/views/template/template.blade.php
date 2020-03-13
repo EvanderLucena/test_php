@@ -36,9 +36,7 @@
 				<li class="nav-item dropdown">
 					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDrop">Saiba mais</a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">Sobre nós</a>
-						<a class="dropdown-item" href="#">Informações</a>
-						<a class="dropdown-item" href="#">Desenvolvedor</a>
+						<a class="dropdown-item" href="{{ route('sobre')}}">Sobre nós</a>
 					</div>
 				</li>
 			</ul>
